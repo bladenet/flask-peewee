@@ -6,9 +6,9 @@ if sys.version_info[:2] < (2, 6):
     requirements.append('simplejson')
 
 setup(
-    name='flask-peewee',
+    name='blade-flask-peewee',
     version='0.6.6',
-    url='http://github.com/coleifer/flask-peewee/',
+    url='https://github.com/bladenet/flask-peewee',
     license='BSD',
     author='Charles Leifer',
     author_email='coleifer@gmail.com',

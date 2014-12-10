@@ -69,7 +69,7 @@
           {% block sidebar %}
             <ul id="nav" class="nav nav-list">
               {% for iter_admin in model_admins %}
-                <li{% if model_admin == iter_admin %} class="active"{% endif %}><a href="{{ url_for(iter_admin.get_url_name('index')) }}">{{ iter_admin.get_admin_name()|fix_underscores }}</a></li>
+                <li{% if model_admin == iter_admin %} class="active"{% endif %}><a href="{{ url_for(iter_admin.get_url_name('index')) }}">{{ iter_admin.get_display_name()|fix_underscores }}</a></li>
               {% endfor %}
             </ul>
           {% endblock %}

@@ -186,9 +186,13 @@ class ModelAdmin(object):
         return col in self.model._meta.fields
 
     def get_display_name(self):
+        if hasattr(self.model, 'display_name'):
+            return self.model.display_name
         return self.model.__name__
 
     def get_admin_name(self):
+        if hasattr(self.model, 'admin_name'):
+            return slugify(self.model.admin_name)
         return slugify(self.model.__name__)
 
     def save_model(self, instance, form, adding=False):

@@ -7,7 +7,7 @@ if sys.version_info[:2] < (2, 6):
 
 setup(
     name='blade-flask-peewee',
-    version='0.6.7',
+    version='0.6.8',
     url='https://github.com/bladenet/flask-peewee',
     license='BSD',
     author='Charles Leifer',

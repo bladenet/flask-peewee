@@ -16,15 +16,15 @@
   <table class="table table-bordered table-striped">
     <thead>
       <tr>
-        <th class="shrink model-name">Model name</th>
+        <th class="shrink model-name">Model Name</th>
         <th class="records">Records</th>
-        <th class="shrink controls"></th>
+        <th class="shrink controls">Actions</th>
       </tr>
     </thead>
     <tbody>
       {% for iter_admin in model_admins %}
         <tr class="link">
-          <td><span class="show"><a href="{{ url_for(iter_admin.get_url_name('index')) }}">{{ iter_admin.get_admin_name()|fix_underscores }}</a></span></td>
+          <td><span class="show"><a href="{{ url_for(iter_admin.get_url_name('index')) }}">{{ iter_admin.get_display_name()|fix_underscores }}</a></span></td>
           <td><span>{{ iter_admin.get_query().count() }}</span></td>
           <td class="links">
             <ul class="inline">

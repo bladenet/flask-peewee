@@ -34,10 +34,14 @@ var Admin = window.Admin || {};
   }
 
   ModelAdminAjaxList.prototype.show = function(url, query, target, click_cb) {
+
     var modal = target.parents('.modal')
       , next_btn = modal.find('a.next')
       , prev_btn = modal.find('a.previous')
       , self = this;
+
+    console.log(modal);
+    modal.show();
 
     $.get(url+'&query='+query, function(data) {
       target.empty();

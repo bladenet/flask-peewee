@@ -14,8 +14,8 @@
     {% for object in query %}<input type="hidden" name="id" value="{{ object.get_id() }}" />{% endfor %}
     <fieldset>
       {% if csrf_token %}{# Support for flask-seasurf #}<input type="hidden" name="_csrf_token" value="{{ csrf_token() }}">{% endif %}
-      <legend>Confirm delete</legend>
-      <ul>
+      <legend>Confirm Deletion</legend>
+      <ul class="list-unstyled">
         {% for object in query %}
           <li>
             {% if get_admin_url(object) %}
@@ -42,7 +42,7 @@
         {% endfor %}
       </ul>
       
-      <div class="form-actions">
+      <div class="form-group">
         <button class="btn btn-danger" type="submit">Confirm Delete</button>
         <a class="btn" href="{{ url_for(model_admin.get_url_name('index')) }}">Cancel</a>
       </div>

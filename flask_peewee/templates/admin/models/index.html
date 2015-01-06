@@ -18,7 +18,7 @@
 
   <form action="." class="form-horizontal" id="model-list" method="post"><input type="hidden" name="action" value="" />
   {% if csrf_token %}{# Support for flask-seasurf #}<input type="hidden" name="_csrf_token" value="{{ csrf_token() }}">{% endif %}
-  <table class="table table-bordered table-striped">
+  <table class="table table-bordered table-condensed table-striped">
     <thead>
       <tr>
         <th class="check first shrink"><input type="checkbox" name="xxx" onchange="javascript:$('td input[type=checkbox]').attr('checked', this.checked);" /></th>
@@ -53,7 +53,7 @@
           <td><a href="{{ url_for(model_admin.get_url_name('edit'), pk=object.get_id()) }}">{{ object }}</a></td>
         {% endif %}
         <td class="last links">
-          <ul class="inline">
+          <ul class="inline list-unstyled">
             <li><a href="{{ url_for(model_admin.get_url_name('edit'), pk=object.get_id()) }}">Edit</a></li>
             <li><a href="{{ url_for(model_admin.get_url_name('delete'), id=object.get_id()) }}">Delete</a></li>
           </ul>
